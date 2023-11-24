@@ -72,6 +72,9 @@ To check Nodes
   * Created service object file because for any reason if the pod gets crashed the newly created pod will contain the same IP address as of the deleted pod
   * Also included the type LoadBalancer and assigned selector field with labels, as it should be applied for any pod which is having 
     the labels (type:proxy)
+  * For Autoscaling in Kubernetes, we use an object HorizontalPodAutoscaler which means based on the CPU utilization the min and max pods will get created 
+    according to the requirement
+    
   
 
 
