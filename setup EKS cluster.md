@@ -70,8 +70,8 @@ To check Nodes
   * Configured YAML files for kubernetes deployment 
   * Created deployment manifest file with nginx image, 2 replicas and included resources 
   * Created service object file because for any reason if the pod gets crashed the newly created pod will contain the same IP address as of the deleted pod
-  * Also included the type LoadBalancer and assigned selector field with labels as it should be applied for any pod which is having 
-    the labels type:proxy
+  * Also included the type LoadBalancer and assigned selector field with labels, as it should be applied for any pod which is having 
+    the labels (type:proxy)
   
 
 
