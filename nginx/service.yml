@@ -8,6 +8,9 @@ spec:
   type: LoadBalancer
   ports:
     - port: 80
-      targetPort: 9999
+      targetPort: 80
+      nodePort: 30005
   selector:
     type: proxy
+
+
