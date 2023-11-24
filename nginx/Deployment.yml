@@ -1,10 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web-deployment
+  name: web-dp
   labels:
     type: proxy
-    author: renu
 spec:
   replicas: 2
   selector:
@@ -24,5 +23,5 @@ spec:
           resources:
             limits:
               memory: "128Mi"
-              cpu: "350m"
-      serviceAccountName: web-sa
+              cpu: "500m"
+      
