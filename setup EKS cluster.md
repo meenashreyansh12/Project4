@@ -7,7 +7,7 @@ Installation of EKS-server
 * Create an IAM role with AdministrationAccess and attach with ec2 machine
 * Install kubectl on ec2 machine
   
-		curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.28.3/2023-11-14/bin/linux/amd64/kubectl
+		curl -O https://s3.us-east-1.amazonaws.com/amazon-eks/1.28.3/2023-11-14/bin/linux/amd64/kubectl
                 chmod +x ./kubectl
 		mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$HOME/bin:$PATH
                 kubectl version --client
@@ -34,9 +34,9 @@ sudo mv /tmp/eksctl /usr/local/bin
 create eks cluster with command 
 --------------------------------
 
-		eksctl create cluster --name mycluster --node-type t2.large --nodes 3 --region us-east-2
+		eksctl create cluster --name meena-cluster --node-type t2.large --nodes 3 --region us-east-1
 	
-* Created cluster with 3 machines in Ohio region from the above command 
+* Created cluster with 3 machines in North Virginia region from the above command 
 * After cluster creation, to login into cluster it needs a plugin called "aws-iam-authenticator pluggin" 
 	
 		curl -Lo aws-iam-authenticator https://github.com/kubernetes-sigs/aws-iam-authenticator/releases/download/v0.6.11/aws-iam-authenticator_0.6.11_linux_amd64
@@ -52,20 +52,20 @@ To check Nodes
 
 >To delete cluster
 	
-	eksctl delete cluster mycluster 
-	eksctl delete cluster mycluster --region us-east-2
+	eksctl delete cluster meena-cluster 
+	eksctl delete cluster meena-cluster --region us-east-1
 
 >syntax of cluster creation
 
-		eksctl create cluster --name mycluster --region=us-east-2 --node-type=<node-instance-type> --nodes=<number-of-nodes>
+		eksctl create cluster --name meena-cluster --region=us-east-1 --node-type=<node-instance-type> --nodes=<number-of-nodes>
 
 > cluster creation command
 
-		eksctl create cluster --name mycluster --region=us-east-2 --node-type=t2.large --nodes=3
+		eksctl create cluster --name meena-cluster --region=us-east-1 --node-type=t2.medium --nodes=3
 
 >cluster deletion
 
-		eksctl delete cluster --name mycluster --region=us-east-2
+		eksctl delete cluster --name mycluster --region=us-east-1
   * Configuring of YAML files for kubernetes deployment
   * create deployment manifest file
   * 
